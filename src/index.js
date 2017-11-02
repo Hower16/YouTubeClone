@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
+import YouTubeSearch from 'youtube-api-search';
+const API_KEY = 'AIzaSyCfwzQJXy0dBe_wt7C95lJ3d-SX7Pq9l7Y';
 
-const API_KEY = 'AIzaSyAVxuxyMaNIHllryzO3llJ10IqeAARs1GE';
+YouTubeSearch({key: API_KEY, term: 'surfboards'}, function(data){
+  console.log(data)
+});
 
-// Create a new component
-// This component should produce HTML
 const App = () => {
   return (
     <div>
@@ -14,5 +16,4 @@ const App = () => {
   );
 }
 
-// Take this component's generated HTML and put it on the page (in the DOM)
 ReactDOM.render(<App/>, document.querySelector('.container'));
